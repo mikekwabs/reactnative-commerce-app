@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from "react-native";
 import mycolors from "./../constants/mycolors";
 
@@ -35,70 +36,66 @@ const SignUp = () => {
         <View style={{ padding: 40 }}>
           <Text style={{ fontSize: 35 }}>Sign In</Text>
         </View>
-        <View style={{ marginTop: 2 }}>
-          <NativeBaseProvider>
-            <Stack space={4} w="100%" alignItems="center">
-              <Input
-                size="2xl"
-                w={{
-                  base: "75%",
-                  md: "25%",
-                }}
-                InputLeftElement={
-                  <Icon
-                    as={<MaterialIcons name="person" />}
-                    size={5}
-                    ml="2"
-                    color="muted.400"
-                  />
-                }
-                placeholder="Email"
-              />
-              <Input
-                size="2xl"
-                w={{
-                  base: "75%",
-                  md: "25%",
-                }}
-                InputLeftElement={
-                  <Icon
-                    as={<MaterialIcons name="person" />}
-                    size={5}
-                    ml="2"
-                    color="muted.400"
-                  />
-                }
-                placeholder="Username"
-              />
+        {/* Form Inpu */}
+        <KeyboardAvoidingView behavior="padding">
+          <View style={{ marginTop: 2 }}>
+            <NativeBaseProvider>
+              <Stack space={4} w="100%" alignItems="center">
+                <Input
+                  size="2xl"
+                  w={{
+                    base: "75%",
+                    md: "25%",
+                  }}
+                  InputLeftElement={
+                    <Icon
+                      as={<MaterialIcons name="person" />}
+                      size={5}
+                      ml="2"
+                      color="muted.400"
+                    />
+                  }
+                  placeholder="Email"
+                />
+                <Input
+                  size="2xl"
+                  w={{
+                    base: "75%",
+                    md: "25%",
+                  }}
+                  InputLeftElement={
+                    <Icon
+                      as={<MaterialIcons name="person" />}
+                      size={5}
+                      ml="2"
+                      color="muted.400"
+                    />
+                  }
+                  placeholder="Username"
+                />
 
-              <Input
-                size="2xl"
-                w={{
-                  base: "75%",
-                  md: "25%",
-                }}
-                InputRightElement={
-                  <Icon
-                    as={<MaterialIcons name="visibility-off" />}
-                    size={5}
-                    mr="2"
-                    color="muted.400"
-                  />
-                }
-                placeholder="Password"
-              />
-            </Stack>
-          </NativeBaseProvider>
-          <TouchableOpacity>
-            <Pressable>
-              <View style={styles.button}>
-                <Text style={{ color: mycolors.white, fontSize: 20 }}>
-                  Create Account
-                </Text>
-              </View>
-            </Pressable>
-          </TouchableOpacity>
-        </View>
+                <Input
+                  size="2xl"
+                  w={{
+                    base: "75%",
+                    md: "25%",
+                  }}
+                  placeholder="Password"
+                  secureTextEntry
+                />
+              </Stack>
+            </NativeBaseProvider>
+            <TouchableOpacity>
+              <Pressable>
+                <View style={styles.button}>
+                  <Text style={{ color: mycolors.white, fontSize: 20 }}>
+                    Create Account
+                  </Text>
+                </View>
+              </Pressable>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAvoidingView>
       </View>
     </ScrollView>
   );
