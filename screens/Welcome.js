@@ -7,22 +7,32 @@ import {
   View,
   Text,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 import mycolors from "./../constants/mycolors";
 import Constants from "expo-constants";
 import SafeAreaView from "react-native-safe-area-view";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const statusBarHeight = Constants.statusBarHeight;
+
+const goBack = () => {};
 
 const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 2, backgroundColor: mycolors.white }}>
       <StatusBar translucent backgroundColor={mycolors.transparent} />
-      <Image
-        source={require("./../assets/images/welcome.jpg")}
-        style={styles.image}
-      />
+      {/* Image background */}
+      <View>
+        <Image
+          source={require("./../assets/images/welcome.jpg")}
+          style={styles.image}
+        />
+        <TouchableOpacity style={{ position: "absolute", top: 20 }}>
+          <Icon name="keyboard-arrow-left" size={30} color={mycolors.black} />
+        </TouchableOpacity>
+      </View>
+
       <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
         <View>
           <Text style={styles.title}>Special Jacket</Text>
