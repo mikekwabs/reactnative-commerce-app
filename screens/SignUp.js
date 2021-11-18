@@ -1,6 +1,7 @@
 import React from "react";
-import { Input, Icon, Stack, NativeBaseProvider, List } from "native-base";
+import { Input, Stack, NativeBaseProvider, List } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 import {
   ImageBackground,
   ScrollView,
@@ -14,7 +15,7 @@ import {
 } from "react-native";
 import mycolors from "./../constants/mycolors";
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
   return (
     <ScrollView
       style={{
@@ -29,14 +30,21 @@ const SignUp = () => {
           height: Dimensions.get("window").height / 2,
           resizeMode: "cover",
         }}
-      ></ImageBackground>
+      >
+        <Pressable
+          onPress={() => navigation.navigate("Login")}
+          style={{ position: "absolute", top: 20 }}
+        >
+          <Icon name="keyboard-arrow-left" size={30} color={mycolors.black} />
+        </Pressable>
+      </ImageBackground>
       {/* Bottom View */}
       <View style={styles.bottomView}>
         {/* SignUp View */}
         <View style={{ padding: 40 }}>
-          <Text style={{ fontSize: 35 }}>Sign In</Text>
+          <Text style={{ fontSize: 35 }}>Sign Up</Text>
         </View>
-        {/* Form Inpu */}
+        {/* Form Input */}
         <KeyboardAvoidingView behavior="padding">
           <View style={{ marginTop: 2 }}>
             <NativeBaseProvider>
@@ -86,7 +94,7 @@ const SignUp = () => {
               </Stack>
             </NativeBaseProvider>
             <TouchableOpacity>
-              <Pressable>
+              <Pressable onPress={() => navigation.navigate("Store")}>
                 <View style={styles.button}>
                   <Text style={{ color: mycolors.white, fontSize: 20 }}>
                     Create Account

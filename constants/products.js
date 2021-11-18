@@ -6,8 +6,7 @@ const clothes = [
     color: "red",
     background: "#b2bec3",
     image: require("./../assets/images/BlackT-Shirt.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Men's Cotton T-shirt to celebrate the beauty of life.",
   },
   {
     id: "2",
@@ -16,8 +15,7 @@ const clothes = [
     color: "red",
     background: "#fab1a0",
     image: require("./../assets/images/RedSweater.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Red Cotton Sweater to celebrate the beauty of life.",
   },
   {
     id: "3",
@@ -26,8 +24,7 @@ const clothes = [
     color: "red",
     background: "#ffcccc",
     image: require("./../assets/images/PinkSweater.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Pink Cotton Sweater to celebrate the beauty of fashion.",
   },
 
   {
@@ -37,8 +34,7 @@ const clothes = [
     color: "red",
     background: "#dfe6e9",
     image: require("./../assets/images/GrayTrousers.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Pure Cotton Trousers to celebrate the beauty of fashion.",
   },
   {
     id: "5",
@@ -47,8 +43,7 @@ const clothes = [
     color: "red",
     background: "#ffcccc",
     image: require("./../assets/images/PinkT-Shirt.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Pink Cotton T-Shirt to put your fashion game on point.",
   },
   {
     id: "6",
@@ -57,8 +52,7 @@ const clothes = [
     color: "red",
     background: "#ffb8b8",
     image: require("./../assets/images/RedTrousers.png"),
-    description:
-      "Organic Cotton Sweater to celebrate the beauty of marine ecosystems.",
+    description: "Red Trousers to celebrate the beauty art.",
   },
 ];
 

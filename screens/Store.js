@@ -8,11 +8,9 @@ import {
   TouchableOpacity,
   TextInput,
   FlatList,
+  Pressable,
 } from "react-native";
 
-//screen
-import Profile from "./Profile";
-import Settings from "./Settings";
 // import theme
 import * as theme from "./../constants/theme";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -24,6 +22,7 @@ import BagModal from "./../components/bagModal";
 import * as Products from "./../constants/products";
 // const with the current theme (dark / light)
 const currentTheme = theme.colors.light;
+import mycolors from "./../constants/mycolors";
 
 // const Tab = createBottomTabNavigator();
 
@@ -73,7 +72,7 @@ const currentTheme = theme.colors.light;
 //   );
 // };
 
-const Store = () => {
+const Store = ({ navigation }) => {
   const [bagVisible, setBagVisible] = useState(false);
 
   const ToggleBagVisible = () => {
@@ -94,10 +93,18 @@ const Store = () => {
         {/* Header */}
         <View style={styles.headerContainer}>
           <View>
-            <Text style={styles.titleText}>Do your shopping online</Text>
-            <Text style={styles.subTitleText}>
-              find the best choices for you
-            </Text>
+            <Pressable
+              onPress={() => navigation.navigate("Login")}
+              style={{ position: "relative", top: 0, right: 10 }}
+            >
+              <Icon
+                name="keyboard-arrow-left"
+                size={30}
+                color={mycolors.black}
+              />
+            </Pressable>
+            <Text style={styles.titleText}>New collection for you.</Text>
+            <Text style={styles.subTitleText}>browse to find best choice.</Text>
           </View>
           <TouchableOpacity
             style={styles.iconCaontainer}
@@ -173,10 +180,12 @@ const styles = StyleSheet.create({
   titleText: {
     fontWeight: "bold",
     fontSize: theme.sizes.h5,
+    paddingLeft: 10,
   },
   subTitleText: {
     fontSize: theme.sizes.h3,
     color: theme.colors.gray,
+    paddingLeft: 10,
   },
   iconCaontainer: {
     padding: 10,

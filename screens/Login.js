@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { Input, Icon, Stack, NativeBaseProvider, List } from "native-base";
+import React from "react";
+import { Input, Stack, NativeBaseProvider } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -14,12 +13,12 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import mycolors from "./../constants/mycolors";
+import Icon from "react-native-vector-icons/MaterialIcons";
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-  const navigation = useNavigation();
 
   // const handleSignUp = () => {
   //   auth
@@ -41,7 +40,14 @@ const Login = () => {
           height: Dimensions.get("window").height / 2,
           resizeMode: "cover",
         }}
-      ></ImageBackground>
+      >
+        <Pressable
+          onPress={() => navigation.navigate("Welcome")}
+          style={{ position: "absolute", top: 20 }}
+        >
+          <Icon name="keyboard-arrow-left" size={30} color={mycolors.black} />
+        </Pressable>
+      </ImageBackground>
       {/*Bottom View*/}
       <View style={styles.bottomView}>
         {/* Welcome View */}
@@ -95,7 +101,7 @@ const Login = () => {
             {/* Login Button View */}
 
             <TouchableOpacity>
-              <Pressable>
+              <Pressable onPress={() => navigation.navigate("Store")}>
                 <View style={styles.button}>
                   <Text style={{ color: mycolors.white, fontSize: 20 }}>
                     Login
